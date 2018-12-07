@@ -37,6 +37,7 @@ public class Player {
 	public boolean getHit() {
 		return hit;
 	}
+	//test
 	
 	
 }
