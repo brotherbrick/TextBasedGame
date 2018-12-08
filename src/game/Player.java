@@ -3,20 +3,36 @@ package game;
 import java.util.Scanner;
 import java.util.Random;
 
-public class Player {
+public class Player extends Character{
 	Scanner s = new Scanner(System.in);
 	Random rand = new Random();
-	public static String playername;
-	public static int playerhp;
-	public static int maxhp;
-	public static int mana;
-	public static int maxmana;
-	public static int playerdmg;
-	public static int playerLevel;
-	public static int xp;
+	private String playername;
+	private int healthPotionDropChance;
+	private int healthPotionHealAmount;
+	private int numHealthPotions;
+	
+	
 	public static boolean hit;
 
 	private int hitchance;
+
+	
+	public Player() {
+		super(100);
+		numHealthPotions = 3;
+		healthPotionDropChance = 50;
+	}
+	
+	public void usePotion() {
+		super.increaseHealth(30);
+		numHealthPotions--;
+		
+	}
+	
+	
+	
+	
+	
 	
 	public void setPlayername() {
 		playername = s.nextLine();
@@ -31,12 +47,7 @@ public class Player {
 		}
 	}
 	
-	public static int playerdmg(int Level) {
-		
-		playerdmg = 10 * Level;
-		return playerdmg;
-		
-	}
+	
 	
 	public String getPlayername() {
 		return playername;
@@ -45,7 +56,28 @@ public class Player {
 	public boolean getHit() {
 		return hit;
 	}
-	//test
+	
+
+	public String getHealthPotionAmount() {
+		
+		return "30";
+	}
+
+	public int getnumHealthPotions() {
+		// TODO Auto-generated method stub
+		return numHealthPotions;
+	}
+
+	public int gethealthPotionDropChance() {
+		// TODO Auto-generated method stub
+		return healthPotionDropChance;
+	}
+
+	public void increasenumHealthPotions() {
+		
+		numHealthPotions++;
+		
+	}
 	
 	
 }
