@@ -18,6 +18,10 @@ public class Player {
 
 	private int hitchance;
 	
+	public void setPlayername() {
+		playername = s.nextLine();
+	}
+	
 	public void hitdie() {
 		int hitdie = rand.nextInt(5);
 		if (hitdie >= 2) {
@@ -32,6 +36,10 @@ public class Player {
 		playerdmg = 10 * Level;
 		return playerdmg;
 		
+	}
+	
+	public String getPlayername() {
+		return playername;
 	}
 
 	public boolean getHit() {

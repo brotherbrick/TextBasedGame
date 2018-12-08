@@ -11,7 +11,11 @@ public class Game_Driver {
 		String playerInput;
 		set.die();
 		
-		System.out.println("You are in a " + set.getSetting() + " where there is a man, what do you want to do?");
+		System.out.println("What is your name?");
+		player.setPlayername();
+		
+		
+		System.out.println(player.getPlayername() + ", you are in a " + set.getSetting() + " where there is a man, what do you want to do?");
 		playerInput = s.nextLine();
 		
 		switch (playerInput) {
