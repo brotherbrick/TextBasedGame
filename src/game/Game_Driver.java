@@ -31,6 +31,8 @@ public class Game_Driver {
 			String enemyType = enemies[rand.nextInt(enemies.length)];
 			System.out.println("\t# " + enemyType + " has appeared! #\n");
 
+			
+			//possibly change enemy health condition to boolean fighting? Initiate fighting loop when an enemy appears?
 			while (enemyHealth > 0) { //begin fight loop ---------------------------------------------------------------------
 				System.out.println("\tYour HP: " + player.getHealth());
 				System.out.println("\t" + enemyType + "'s HP: " + enemyHealth);
