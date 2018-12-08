@@ -31,7 +31,7 @@ public class Game_Driver {
 			String enemyType = enemies[rand.nextInt(enemies.length)];
 			System.out.println("\t# " + enemyType + " has appeared! #\n");
 
-			while (enemyHealth > 0) { //begin fight loop
+			while (enemyHealth > 0) { //begin fight loop ---------------------------------------------------------------------
 				System.out.println("\tYour HP: " + player.getHealth());
 				System.out.println("\t" + enemyType + "'s HP: " + enemyHealth);
 				System.out.println("\n\tWhat would you like to do?");
@@ -82,12 +82,12 @@ public class Game_Driver {
 					System.out.println("\tInvalid command.");
 
 				}
-			}
+			} //end fight loop --------------------------------------------------
 			
 			if(player.getHealth() < 1) { //player dies ends game
 				System.out.println("You limp out of the dungeon, weka from battle.");
 				break;
-			}
+			} //player wins fight
 			
 			System.out.println("------------------------------------------------------------------");
 			System.out.println(" # " + enemyType + " was defeated! # ");
@@ -109,10 +109,10 @@ public class Game_Driver {
 				input = s.nextLine();
 			}
 			
-			if(input.equals("1")) {
+			if(input.equals("1")) { //restarts loop
 				System.out.println("You continue on your adventure!");
 			}
-			else if(input.equals("2")) {
+			else if(input.equals("2")) { //stops loop
 				System.out.println("You exit the dungeon, successful from your adventures!");
 				break;
 				
