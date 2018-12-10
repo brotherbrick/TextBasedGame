@@ -59,9 +59,10 @@ public class Game_Driver {
 
 						if (player.getHealth() < 1) { // dies
 							System.out.println("\t> You have taken too much damage, you are too weak to go on.");
-							break;
-						} else { // not option
-							System.out.println("\t> That is not an option.");
+							fighting = false;
+						} else if (enemyHealth <= 0) {
+							System.out.println("\t Your enemy has been defeated.");
+							fighting = false;
 						}
 					} else if (input.equals("2")) { // health potion
 						if (player.getnumHealthPotions() > 0) {
@@ -71,7 +72,7 @@ public class Game_Driver {
 							System.out.println("\t> You drink a health potion, healing yourself for "
 									+ player.getHealthPotionAmount() + "." + "\n\t> You now have " + player.getHealth()
 									+ " HP." + "\n\t> You have " + player.getnumHealthPotions()
-									+ "health potions left.\n");
+									+ " health potions left.\n");
 
 						} else { // out of health potions
 
@@ -91,6 +92,7 @@ public class Game_Driver {
 					}
 				} // end fight loop --------------------------------------------------
 
+				fighting = false;
 				if (player.getHealth() < 1) { // player dies ends game
 					System.out.println("You limp out of the dungeon, weak from battle.");
 					break;
@@ -105,33 +107,33 @@ public class Game_Driver {
 					System.out.println(" # You now have " + player.getnumHealthPotions() + " health potion(s). # ");
 				}
 				System.out.println("------------------------------------------------------------------");
-				System.out.println("What would you like to do now?");
-				System.out.println("1. Continue fighting");
-				System.out.println("2. Exit dungeon.");
+				System.out.println("You continue on.");
 
-				String input = s.nextLine();
-
-				while (!input.equals("1") && !input.equals("2")) {
-					System.out.println("Invalid command!");
-					input = s.nextLine();
+				//while (!input.equals("1") && !input.equals("2")) {
+					//System.out.println("Invalid command!");
+					//input = s.nextLine();
+				
+				System.out.println(
+						"You look around and see a house, and a swimming pool. Where do you want to go next?");
+				String userInput = s.nextLine();
+				if (userInput.equalsIgnoreCase("go to house")) {
+					System.out.println("You go to the house.");
+				} else if (userInput.equalsIgnoreCase("go to swimming pool")) {
+					System.out.println("You go to the swimming pool.");
 				}
-
-				if (input.equals("1")) { // restarts loop
-					System.out.println("You continue on your adventure!");
-					// fighting = false;
-				} else if (input.equals("2")) { // stops loop
-					System.out.println("You exit the dungeon, successful from your adventures!");
-					break;
-
+				
 				}
 
 			}
+		
 
-			System.out.println("###########################");
-			System.out.println("#    THANKS FOR PLAYING   #");
-			System.out.println("###########################");
-
-		}
+		
+		
+		
+		System.out.println("###########################");
+		System.out.println("#    THANKS FOR PLAYING   #");
+		System.out.println("###########################");
 
 	}
+
 }
